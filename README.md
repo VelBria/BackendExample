@@ -17,16 +17,16 @@ src/
 ├── provider/Server.ts        # Express, middlewares y conexión a ambas DB   (no suele tocarse)
 ├── controllers/
 │   ├── AbstractController.ts  # Base Singleton: router + prefijo            (no suele tocarse)
-│   ├── RecursoController.ts   # 🔧 CRUD SQL de ejemplo
-│   └── DocumentoController.ts # 🔧 CRUD NoSQL de ejemplo
+│   ├── RecursoController.ts   # CRUD SQL de ejemplo
+│   └── DocumentoController.ts # CRUD NoSQL de ejemplo
 ├── models/                   # Modelos SQL (se autocargan desde index.ts)
 │   ├── index.ts               # Loader dinámico de Sequelize               (no suele tocarse)
-│   ├── RecursoModel.ts        # 🔧 entidad principal
-│   ├── CategoriaModel.ts      # 🔧 entidad secundaria (lado N:M)
-│   └── RecursoCategoria.ts    # 🔧 tabla intermedia N:M
+│   ├── RecursoModel.ts        # entidad principal
+│   ├── CategoriaModel.ts      # entidad secundaria (lado N:M)
+│   └── RecursoCategoria.ts    # tabla intermedia N:M
 └── modelsNOSQL/              # Modelos NoSQL
     ├── index.ts               # Conexión a MongoDB                         (no suele tocarse)
-    └── Documento.ts           # 🔧 colección de ejemplo
+    └── Documento.ts           # colección de ejemplo
 ```
 
 ## Puesta en marcha
@@ -68,5 +68,3 @@ Endpoint de salud: `GET /` → `Server is working 🚀`.
 
 ### Si no necesitas relaciones N:M
 Borra `CategoriaModel.ts`, `RecursoCategoria.ts` y los endpoints `*/categorias` de `RecursoController.ts`.
-
-> 💡 Recuerda actualizar también `name` en `package.json` al nombre de tu proyecto.
